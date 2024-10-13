@@ -2,6 +2,11 @@
 
 This is a **Crowdfunding App** built on the **Stellar Network** using **Soroban**. It enables users to create, fund, and manage crowdfunding projects efficiently.
 
+## 👤 Who Am I (neofetch)
+
+I’m currently working as an R&D engineer and developer while pursuing my doctorate in biomedical engineering, with an emphasis on artificial intelligence. I strive to sharpen my skills and share my journey.
+
+
 ## 📚 My Tutorial To Learn How to Build It Yourself!
 
 I have prepared a tutorial for starting to rust, deploying smart contracts in stellar and connecting it to a front end in detail. To dive deeper into the development process, check out my extensive tutorial for starting with Rust and Soroban:  
