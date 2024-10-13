@@ -3,8 +3,9 @@
 This is a **Crowdfunding App** built on the **Stellar Network** using **Soroban**. It enables users to create, fund, and manage crowdfunding projects efficiently.
 
 ## 👤 Who Am I (neofetch)
-
-I’m currently working as an R&D engineer and developer while pursuing my doctorate in biomedical engineering, with an emphasis on artificial intelligence. I strive to sharpen my skills and share my journey.
+Onuralp Arslan
+I’m currently working as an R&D engineer and developer while pursuing my doctorate in biomedical engineering, with an emphasis on artificial intelligence. 
+I strive to sharpen my skills and share my journey.
 
 
 ## 📚 My Tutorial To Learn How to Build It Yourself!
