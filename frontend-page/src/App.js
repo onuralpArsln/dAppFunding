@@ -1,50 +1,68 @@
-import React, { useState } from 'react';
-import { SorobanRpc, Contract } from 'soroban-client';
+import React, { useState, useEffect } from 'react';
+import { SorobanRpc, Contract, Server } from 'soroban-client';
 import { xdr, Networks } from 'stellar-sdk';
 
 const contractId = 'YOUR_CONTRACT_ID_HERE'; // Replace with your deployed contract ID
 const rpcUrl = 'https://soroban-testnet.stellar.org';
 
+
+
+const server = new Server("https://soroban-testnet.stellar.org");
+
 function App() {
-  const [name, setName] = useState('');
-  const [greeting, setGreeting] = useState('');
+  const [projects, setProjects] = useState([]);
+  const [newProject, setNewProject] = useState({ goal: '', duration: '' });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    // Fetch projects from the contract
+    // This is a placeholder and needs to be implemented based on your contract interaction
+  }, []);
 
-    // Adjust according to the actual structure of the SorobanRpc
-    const server = new SorobanRpc(rpcUrl); // or check how to correctly instantiate it
-    const contract = new Contract(contractId);
+  const createProject = async () => {
+    // Implement project creation logic
+    console.log('Creating project:', newProject);
+  };
 
-    try {
-      const result = await server.simulateTransaction(
-        contract.call('greet', xdr.ScVal.scSymbol(name))
-      );
-
-      if (result.result) {
-        const greetingSymbol = xdr.ScVal.fromXDR(result.result.retval);
-        setGreeting(greetingSymbol.sym());
-      }
-    } catch (error) {
-      console.error('Error calling contract:', error);
-    }
+  const fundProject = async (projectId, amount) => {
+    // Implement funding logic
+    console.log('Funding project:', projectId, amount);
   };
 
   return (
-    <div className="App">
-      <h1>Soroban Frontend Demo</h1>
-      <form onSubmit={handleSubmit}>
+    <div>
+      <h1>Crowdfunding App</h1>
+      <div>
+        <h2>Create Project</h2>
         <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name"
+          type="number"
+          placeholder="Goal"
+          value={newProject.goal}
+          onChange={(e) => setNewProject({ ...newProject, goal: e.target.value })}
         />
-        <button type="submit">Get Greeting</button>
-      </form>
-      {greeting && <p>{greeting}</p>}
+        <input
+          type="number"
+          placeholder="Duration (in months)"
+          value={newProject.duration}
+          onChange={(e) => setNewProject({ ...newProject, duration: e.target.value })}
+        />
+        <button onClick={createProject}>Create Project</button>
+      </div>
+      <div>
+        <h2>Projects</h2>
+        {projects.map((project) => (
+          <div key={project.id}>
+            <h3>{project.id}</h3>
+            <p>Goal: {project.goal}</p>
+            <p>Raised: {project.raised}</p>
+            <p>Deadline: {new Date(project.deadline * 1000).toLocaleString()}</p>
+            <input type="number" placeholder="Amount to fund" />
+            <button onClick={() => fundProject(project.id, /* amount */)}>Fund</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default App;
+
