@@ -2,9 +2,9 @@
 
 This is a **Crowdfunding App** built on the **Stellar Network** using **Soroban**. It enables users to create, fund, and manage crowdfunding projects efficiently.
 
-## 📚 Learn How to Build It Yourself!
+## 📚 My Tutorial To Learn How to Build It Yourself!
 
-To dive deeper into the development process, check out my extensive tutorial for starting with Rust and Soroban:  
+I have prepared a tutorial for starting to rust, deploying smart contracts in stellar and connecting it to a front end in detail. To dive deeper into the development process, check out my extensive tutorial for starting with Rust and Soroban:  
 👉 [Build Your Own Crowdfunding App Tutorial](https://github.com/onuralpArsln/stellarSoroban)
 
 ## ⚙️ Installation
@@ -13,7 +13,7 @@ Before running the application, make sure to install the required packages:
 
 ```bash
 npm install stellar-sdk @stellar/freighter-api
-
+```
 
 
 ## 🌐 Check Out the Project on Stellar Testnet
