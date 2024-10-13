@@ -1,0 +1,55 @@
+.container {
+  width: 600px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.project-creation,
+.project-details {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input[type="number"] {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+button:disabled {
+  background-color: #ccc; /* Grey */
+  cursor: not-allowed;
+}

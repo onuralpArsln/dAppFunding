@@ -1,5 +1,5 @@
 import React from 'react';
-import CrowdfundingComponent from './CrowdfundingComponent.js';
+import CrowdfundingComponent from './CrowdfundingComponent.jsx';
 
 function App() {
   return (
