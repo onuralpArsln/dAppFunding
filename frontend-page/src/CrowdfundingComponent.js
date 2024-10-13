@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { createProject, getProject, fundProject, finalizeProject } from './soroban-contract-utils';
-import { getPublicKey } from '@stellar/freighter-api';
+import React, { useState, useEffect } from 'react';
+import { createProject, getProject, fundProject, finalizeProject } from './soroban-contract-utils.js';
+import { getAddress } from '@stellar/freighter-api';
 
 export default function CrowdfundingComponent() {
     const [projectId, setProjectId] = useState('');
@@ -11,13 +11,27 @@ export default function CrowdfundingComponent() {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    // Function to handle creating a new project
+    useEffect(() => {
+        const testFreighterConnection = async () => {
+            try {
+                const publicKey = await getAddress();
+                console.log('Public Key from test function:', publicKey);
+            } catch (error) {
+                console.error('Test function error:', error);
+            }
+        };
+        testFreighterConnection();
+    }, []);
+
     const handleCreateProject = async () => {
         setLoading(true);
         setError('');
         try {
-            const creator = await getPublicKey();  // Get public key of user
+            console.log('Attempting to get public key');
+            const creator = await getAddress();  // Get public key of user
+            console.log('Public Key:', creator);
             const newProjectId = await createProject(creator, parseInt(goal), parseInt(duration)); // Pass duration as days
+            console.log('New Project ID:', newProjectId);
             setProjectId(newProjectId);
             setProject(await getProject(newProjectId)); // Fetch the newly created project
         } catch (error) {
@@ -32,7 +46,8 @@ export default function CrowdfundingComponent() {
         setLoading(true);
         setError('');
         try {
-            const funder = await getPublicKey();
+            const funder = await getAddress();
+            console.log('Funder Public Key:', funder);
             await fundProject(projectId, funder, parseInt(amount));
             setProject(await getProject(projectId)); // Refresh project data after funding
         } catch (error) {
@@ -47,6 +62,7 @@ export default function CrowdfundingComponent() {
         setLoading(true);
         setError('');
         try {
+            console.log('Finalizing Project ID:', projectId);
             await finalizeProject(projectId);
             setProject(await getProject(projectId)); // Refresh project data after finalizing
         } catch (error) {
@@ -61,7 +77,6 @@ export default function CrowdfundingComponent() {
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">Crowdfunding Project</h1>
             {error && <p className="text-red-500 mb-4">{error}</p>}
-
             {/* Input fields for project creation */}
             <div className="mb-4">
                 <input
@@ -86,7 +101,6 @@ export default function CrowdfundingComponent() {
                     {loading ? 'Creating Project...' : 'Create Project'}
                 </button>
             </div>
-
             {/* Display project details */}
             {project && (
                 <div className="border p-4 rounded">
@@ -95,7 +109,6 @@ export default function CrowdfundingComponent() {
                     <p><strong>Goal:</strong> {project.goal} XLM</p>
                     <p><strong>Raised:</strong> {project.raised} XLM</p>
                     <p><strong>Deadline:</strong> {new Date(project.deadline * 1000).toLocaleString()}</p>
-
                     {/* Input for funding the project */}
                     <div className="mt-4">
                         <input

@@ -2,7 +2,9 @@
   "name": "frontend-page",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
+    "@stellar/freighter-api": "^3.0.0",
     "@stellar/stellar-sdk": "^12.3.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
