@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { createProject, getProject, fundProject, finalizeProject } from './soroban-contract-utils.js';
+import { createProject, getProject, fundProject, finalizeProject } from './soroban-contract-utils.js'; // Add .js extension
 import { getAddress } from '@stellar/freighter-api';
+import * as FreighterAPI from '@stellar/freighter-api'; // Import all API functions
 
 export default function CrowdfundingComponent() {
     const [projectId, setProjectId] = useState('');
@@ -14,8 +15,12 @@ export default function CrowdfundingComponent() {
     useEffect(() => {
         const testFreighterConnection = async () => {
             try {
-                const publicKey = await getAddress();
-                console.log('Public Key from test function:', publicKey);
+                const isConnected = await FreighterAPI.isConnected();
+                const isAllowed = await FreighterAPI.isAllowed();
+                const address = await getAddress();
+                console.log('Freighter isConnected:', isConnected);
+                console.log('Freighter isAllowed:', isAllowed);
+                console.log('Public Key from test function:', address);
             } catch (error) {
                 console.error('Test function error:', error);
             }
@@ -33,7 +38,9 @@ export default function CrowdfundingComponent() {
             const newProjectId = await createProject(creator, parseInt(goal), parseInt(duration)); // Pass duration as days
             console.log('New Project ID:', newProjectId);
             setProjectId(newProjectId);
-            setProject(await getProject(newProjectId)); // Fetch the newly created project
+            const project = await getProject(newProjectId);
+            console.log('Project Details:', project);
+            setProject(project); // Fetch the newly created project
         } catch (error) {
             console.error('Error creating project:', error);
             setError('Failed to create project. Please try again.');
