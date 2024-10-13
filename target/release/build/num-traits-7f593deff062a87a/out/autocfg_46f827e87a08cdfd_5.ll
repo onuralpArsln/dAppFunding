@@ -1,11 +1,11 @@
-; ModuleID = 'autocfg_e483e100f082eecf_5.5679ab7a18b75aa1-cgu.0'
-source_filename = "autocfg_e483e100f082eecf_5.5679ab7a18b75aa1-cgu.0"
+; ModuleID = 'autocfg_46f827e87a08cdfd_5.c28c6c8b256c81a1-cgu.0'
+source_filename = "autocfg_46f827e87a08cdfd_5.c28c6c8b256c81a1-cgu.0"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
 ; std::f64::<impl f64>::copysign
 ; Function Attrs: inlinehint nonlazybind uwtable
-define internal double @"_ZN3std3f6421_$LT$impl$u20$f64$GT$8copysign17h1c0afdb716760954E"(double %self, double %sign) unnamed_addr #0 {
+define internal double @"_ZN3std3f6421_$LT$impl$u20$f64$GT$8copysign17h6c3cd7b77a080ef0E"(double %self, double %sign) unnamed_addr #0 {
 start:
   %0 = alloca [8 x i8], align 8
   %1 = call double @llvm.copysign.f64(double %self, double %sign)
@@ -14,12 +14,12 @@ start:
   ret double %_0
 }
 
-; autocfg_e483e100f082eecf_5::probe
+; autocfg_46f827e87a08cdfd_5::probe
 ; Function Attrs: nonlazybind uwtable
-define void @_ZN26autocfg_e483e100f082eecf_55probe17h7885900a6f8ffa02E() unnamed_addr #1 {
+define void @_ZN26autocfg_46f827e87a08cdfd_55probe17hc57a6813001ed76bE() unnamed_addr #1 {
 start:
 ; call std::f64::<impl f64>::copysign
-  %_1 = call double @"_ZN3std3f6421_$LT$impl$u20$f64$GT$8copysign17h1c0afdb716760954E"(double 1.000000e+00, double -1.000000e+00)
+  %_1 = call double @"_ZN3std3f6421_$LT$impl$u20$f64$GT$8copysign17h6c3cd7b77a080ef0E"(double 1.000000e+00, double -1.000000e+00)
   ret void
 }
 

@@ -1,11 +1,11 @@
-; ModuleID = 'autocfg_e483e100f082eecf_7.19d7ac45be35dd15-cgu.0'
-source_filename = "autocfg_e483e100f082eecf_7.19d7ac45be35dd15-cgu.0"
+; ModuleID = 'autocfg_46f827e87a08cdfd_7.4106c13f61170a54-cgu.0'
+source_filename = "autocfg_46f827e87a08cdfd_7.4106c13f61170a54-cgu.0"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
 ; core::num::<impl u32>::to_ne_bytes
 ; Function Attrs: inlinehint nonlazybind uwtable
-define internal i32 @"_ZN4core3num21_$LT$impl$u20$u32$GT$11to_ne_bytes17hc0a990e728a43176E"(i32 %self) unnamed_addr #0 {
+define internal i32 @"_ZN4core3num21_$LT$impl$u20$u32$GT$11to_ne_bytes17h62e5ff0147ae5c2bE"(i32 %self) unnamed_addr #0 {
 start:
   %_0 = alloca [4 x i8], align 1
   store i32 %self, ptr %_0, align 1
@@ -13,14 +13,14 @@ start:
   ret i32 %0
 }
 
-; autocfg_e483e100f082eecf_7::probe
+; autocfg_46f827e87a08cdfd_7::probe
 ; Function Attrs: nonlazybind uwtable
-define void @_ZN26autocfg_e483e100f082eecf_75probe17h9eee7687b6d41457E() unnamed_addr #1 {
+define void @_ZN26autocfg_46f827e87a08cdfd_75probe17h54af92b24e43af28E() unnamed_addr #1 {
 start:
   %0 = alloca [4 x i8], align 4
   %_1 = alloca [4 x i8], align 1
 ; call core::num::<impl u32>::to_ne_bytes
-  %1 = call i32 @"_ZN4core3num21_$LT$impl$u20$u32$GT$11to_ne_bytes17hc0a990e728a43176E"(i32 1)
+  %1 = call i32 @"_ZN4core3num21_$LT$impl$u20$u32$GT$11to_ne_bytes17h62e5ff0147ae5c2bE"(i32 1)
   store i32 %1, ptr %0, align 4
   call void @llvm.memcpy.p0.p0.i64(ptr align 1 %_1, ptr align 4 %0, i64 4, i1 false)
   ret void

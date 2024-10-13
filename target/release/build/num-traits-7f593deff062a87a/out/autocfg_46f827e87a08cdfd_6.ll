@@ -1,11 +1,11 @@
-; ModuleID = 'autocfg_e483e100f082eecf_6.7f65cad71d1e2591-cgu.0'
-source_filename = "autocfg_e483e100f082eecf_6.7f65cad71d1e2591-cgu.0"
+; ModuleID = 'autocfg_46f827e87a08cdfd_6.bf643709bfa2f3b8-cgu.0'
+source_filename = "autocfg_46f827e87a08cdfd_6.bf643709bfa2f3b8-cgu.0"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
 ; core::f64::<impl f64>::is_subnormal
 ; Function Attrs: inlinehint nonlazybind uwtable
-define internal zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17hab470615284dcaabE"(double %self) unnamed_addr #0 {
+define internal zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17h6bdc6a489ee17221E"(double %self) unnamed_addr #0 {
 start:
   %_2 = alloca [1 x i8], align 1
   %_4 = fcmp une double %self, %self
@@ -58,12 +58,12 @@ bb3:                                              ; preds = %bb1, %bb4
   ret i1 %_0
 }
 
-; autocfg_e483e100f082eecf_6::probe
+; autocfg_46f827e87a08cdfd_6::probe
 ; Function Attrs: nonlazybind uwtable
-define void @_ZN26autocfg_e483e100f082eecf_65probe17h28e9b317ce6b42ffE() unnamed_addr #1 {
+define void @_ZN26autocfg_46f827e87a08cdfd_65probe17hd76da70fc373c021E() unnamed_addr #1 {
 start:
 ; call core::f64::<impl f64>::is_subnormal
-  %_1 = call zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17hab470615284dcaabE"(double 1.000000e+00)
+  %_1 = call zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17h6bdc6a489ee17221E"(double 1.000000e+00)
   ret void
 }
 

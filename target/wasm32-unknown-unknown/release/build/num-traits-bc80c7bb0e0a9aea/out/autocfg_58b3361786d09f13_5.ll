@@ -1,11 +1,11 @@
-; ModuleID = 'autocfg_7fa07209d976cb23_5.b1dfb8ad4ad1efdc-cgu.0'
-source_filename = "autocfg_7fa07209d976cb23_5.b1dfb8ad4ad1efdc-cgu.0"
+; ModuleID = 'autocfg_58b3361786d09f13_5.a206a4cc226b5b6c-cgu.0'
+source_filename = "autocfg_58b3361786d09f13_5.a206a4cc226b5b6c-cgu.0"
 target datalayout = "e-m:e-p:32:32-p10:8:8-p20:8:8-i64:64-n32:64-S128-ni:1:10:20"
 target triple = "wasm32-unknown-unknown"
 
 ; core::f64::<impl f64>::is_subnormal
 ; Function Attrs: inlinehint nounwind
-define internal zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17hf335b8c96771708eE"(double %self) unnamed_addr #0 {
+define internal zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17h793ea0ca58bd3e89E"(double %self) unnamed_addr #0 {
 start:
   %_2 = alloca [1 x i8], align 1
   %_4 = fcmp une double %self, %self
@@ -58,12 +58,12 @@ bb3:                                              ; preds = %bb1, %bb4
   ret i1 %_0
 }
 
-; autocfg_7fa07209d976cb23_5::probe
+; autocfg_58b3361786d09f13_5::probe
 ; Function Attrs: nounwind
-define dso_local void @_ZN26autocfg_7fa07209d976cb23_55probe17hbad033439365972bE() unnamed_addr #1 {
+define dso_local void @_ZN26autocfg_58b3361786d09f13_55probe17hb62ee89e6ba49c9cE() unnamed_addr #1 {
 start:
 ; call core::f64::<impl f64>::is_subnormal
-  %_1 = call zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17hf335b8c96771708eE"(double 1.000000e+00) #2
+  %_1 = call zeroext i1 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$12is_subnormal17h793ea0ca58bd3e89E"(double 1.000000e+00) #2
   ret void
 }
 

@@ -1,11 +1,11 @@
-; ModuleID = 'autocfg_e483e100f082eecf_3.a8e2f5b57191d69e-cgu.0'
-source_filename = "autocfg_e483e100f082eecf_3.a8e2f5b57191d69e-cgu.0"
+; ModuleID = 'autocfg_46f827e87a08cdfd_3.6b562ece397e92df-cgu.0'
+source_filename = "autocfg_46f827e87a08cdfd_3.6b562ece397e92df-cgu.0"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
-; autocfg_e483e100f082eecf_3::probe
+; autocfg_46f827e87a08cdfd_3::probe
 ; Function Attrs: nonlazybind uwtable
-define void @_ZN26autocfg_e483e100f082eecf_35probe17h158c36f7010929ebE() unnamed_addr #0 {
+define void @_ZN26autocfg_46f827e87a08cdfd_35probe17h885adb43306ea45dE() unnamed_addr #0 {
 start:
   %0 = alloca [4 x i8], align 4
   store i32 1, ptr %0, align 4
